@@ -2,7 +2,8 @@
 
 ### How can I use it?
 1. You need SASS: look here for instructions: [Link](http://sass-lang.com/install)
-2. Add the following lines to your main .scss file:
+2. Download circleCounter.scss and do it in the css directory
+3. Add the following lines to your main .scss file:
 ```scss
   //define your circles here:
   //$name: (class name (like in HTML), percent, size, border width, , animation-time, foreground color, background color, text size, color of text, inner shadow, outer shadow, animation-timing-function)
@@ -12,10 +13,10 @@
 
   @import 'circleCounter';
 ```
-3. Add the following lins to your .html file:
+4. Add the following lines to your .html file:
 ```html
 <!-- You can change the class name "circleCounter1", but it must be the same as in your .scss file (2.)-->
-<!--data-animationTime and data-percent must match with the .scss file-->
+<!--data-animationTime and data-percent must match with the .scss file (for percent text)-->
     <div class="circleCounter1" data-animationTime="2" data-percent="80" data-percentId="circleCounter1-text">
       <div class="circle-progressBar"></div>
       <div class="circle-part-1"></div>
@@ -25,10 +26,14 @@
       <div class="circle-part-5"></div>
       <div class="circle-inside"></div>
       <div class="circle-outside"></div>
+
+      <!--this div is just for percent text-->
       <div class="percent-circle1" id="circleCounter1-text"></div>
     </div>
 ```
-4. Change the $circle1, in your scss file, the way you would like it. The parameters are explained above.
-5. (optional): Add a new circle with `$NEW-NAME: (PARAMETERS);`.
-6. (optional): If you added a new circle, you have to refresh the list `$circleList: ($circle1, $NEW-NAME);`.
-7. (optional): If you added a new circle, you have to add 3. again with the appropriate attributes.
+5. Change the $circle1, in your scss file, the way you would like it. The parameters are explained above.
+6. (optional): Add a new circle with `$NEW-NAME: (PARAMETERS);`.
+7. (optional): If you added a new circle, you have to refresh the list `$circleList: ($circle1, $NEW-NAME);`.
+8. (optional): If you added a new circle, you have to add 3. again with the appropriate attributes.
+
+9. (optional): Download the script for display percent text in the middle of the circle

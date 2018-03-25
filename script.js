@@ -1,3 +1,7 @@
+/*
+JavaScript is optional for the percent text
+*/
+
 const circleArray = document.querySelectorAll('[class^="circleCounter"]');
 
 for (let i = 0; i < circleArray.length; i++) {
