@@ -1,0 +1,144 @@
+@mixin describeCircles($class, $animationDuration, $size, $borderWidth, $percentBarColor, $circleColor, $percentSize, $percentColor, $innerShadow, $outerShadow, $animationTimingFunction) {
+  $size2: ($size - (2 * $borderWidth)); //size for inner circle
+  @for $i from 1 through 9 {
+    @if $i == 9 {
+      > div:nth-child(9) { /*percent text*/
+        z-index: 102;
+        color: $percentColor;
+        font-family: sans-serif;
+        font-size: $percentSize;
+      }
+    } @else {
+      > div:nth-child(#{$i}) {
+        @extend %default-class;
+        width: $size2;
+        height: $size2;
+        border-top: #{$borderWidth} solid rgba(0, 0, 0, 0);
+        border-right: #{$borderWidth} solid rgba(0, 0, 0, 0);
+        border-bottom: #{$borderWidth} solid rgba(0, 0, 0, 0);
+        border-left: #{$borderWidth} solid rgba(0, 0, 0, 0);
+        animation-name: animateCircle-#{$i}-#{$class};
+        animation-duration: #{$animationDuration}s;
+        animation-timing-function: $animationTimingFunction;
+      }
+    }
+  }
+  > div:nth-child(1) { /*percentBar*/
+    z-index: 0;
+    border: $borderWidth solid $percentBarColor;
+  }
+  > div:nth-child(2) { /*part Circle1*/
+    z-index: 100;
+    border-top: $borderWidth solid $circleColor;
+  }
+  > div:nth-child(3) { /*part Circle2*/
+    z-index: 3;
+    border-right: $borderWidth solid $circleColor;
+  }
+  > div:nth-child(4) { /*part Circle3*/
+    z-index: 3;
+    border-bottom: $borderWidth solid $circleColor;
+  }
+  > div:nth-child(5) { /*part Circle4*/
+    z-index: 1;
+    border-left: $borderWidth solid $circleColor;
+  }
+  > div:nth-child(6) { /*part Circle5, is under the first circle part , importent for over 75%, z-index will increase*/
+    z-index: 2;
+    border-top: $borderWidth solid $percentBarColor;
+  }
+  > div:nth-child(7) { /*inner circle, just for shadow and "pixel look"-improvement*/
+    z-index: 101;
+    width: $size2 + 3px;
+    height: $size2 + 3px;
+    border: 0 solid $backgroundColor; //div background-color, to minimize pixel; $circleColor if transparent percentbar
+    background-color: $backgroundColor;
+
+    @if $innerShadow == 'yes' {
+      box-shadow: 0 0 5px 0 #000; //define your shadow here
+    }
+  }
+  > div:nth-child(8) { /*outer circle, just for shadow and "pixel look"-improvement*/
+    z-index: 102;
+    width: $size - 2px;
+    height: $size - 2px;
+    border: 3px solid $backgroundColor; //div background-color, to minimize pixel; $circleColor if transparent percentbar;
+
+    @if $outerShadow == 'yes' {
+      box-shadow: inset 0 0 5px 0 #000; //define your shadow here
+    }
+  }
+}
+
+@each $class, $loadPercent, $size, $borderWidth, $animationDuration, $percentBarColor, $circleColor, $percentSize, $percentColor, $innerShadow, $outerShadow, $animationTimingFunction in  $circleList {
+  $deg: (360 * $loadPercent) / 100;
+  $degCache: $deg; //will be reduced later and applied to the individual parts
+  $intermediateValue: 90 / $deg * $animationDuration;
+
+  .#{$class} { /*WrapperClass*/
+    @include describeCircles($class, $animationDuration, $size, $borderWidth, $percentBarColor, $circleColor, $percentSize, $percentColor, $innerShadow, $outerShadow, $animationTimingFunction);
+    display: flex;
+    position: relative;
+    width: $size + 5px;//$size + buffer
+    height: $size + 5px;//$size + buffer
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  /****Animation:***/
+  @for $i from 2 through 6 { //animate the quarter-circles (5 parts)
+    @if $deg > 90 {
+      @if $i == 6 {
+        @keyframes animateCircle-#{$i}-#{$class} {
+          0% {z-index: 1; transform: rotate(45deg);}
+          @if $animationDuration == 0 {
+            $percent: 0;
+            #{$percent}% {z-index: 101; transform: rotate(45deg); }
+          } @else {
+            $percent: $intermediateValue / $animationDuration * 100;
+            #{$percent}% {z-index: 101; transform: rotate(45deg); }
+          }
+          100% {z-index: 101; transform: rotate(45deg);} //z-index need to be high so that it counts up slowly
+        }
+      }
+    }
+    @if $degCache > 0 {
+      @if $deg == 360 {
+        $borderKind: '';
+        @if $i == 2 {
+          $borderKind: 'border-top';
+        } @else if $i == 3 {
+          $borderKind: 'border-right';
+        } @else if $i == 4 {
+          $borderKind: 'border-bottom';
+        } @else if $i == 5 {
+          $borderKind: 'border-left';
+        }
+        @keyframes animateCircle-#{$i}-#{$class} {
+          0% {transform: rotate(45deg); #{$borderKind}: $borderWidth solid $circleColor;}
+          99% {transform: rotate(#{$degCache + 45}deg); #{$borderKind}: $borderWidth solid $circleColor;}
+          100% {transform: rotate(#{$degCache + 45}deg); #{$borderKind}: $borderWidth solid $percentBarColor;}
+        }
+      } @else {
+        @keyframes animateCircle-#{$i}-#{$class} {
+          0% {transform: rotate(45deg);}
+          100% {transform: rotate(#{$degCache + 45}deg);}
+        }
+      }
+      $degCache: $degCache - 90;
+    }
+  }
+}
+
+%default-class {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  animation-fill-mode: forwards;
+  transform: rotate(45deg); //alignment of a right angle
+}

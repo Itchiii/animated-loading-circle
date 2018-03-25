@@ -1,0 +1,506 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  display: flex;
+  width: 100%;
+  height: 100%; }
+
+body {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #2c313d; }
+
+.circleCounter1 {
+  /*WrapperClass*/
+  display: flex;
+  position: relative;
+  width: 125px;
+  height: 125px;
+  justify-content: center;
+  align-items: center; }
+  .circleCounter1 > div:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-1-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-2-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-3-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(4) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-4-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(5) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-5-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(6) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-6-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(7) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-7-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(8) {
+    width: 100px;
+    height: 100px;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-8-circleCounter1;
+    animation-duration: 2s;
+    animation-timing-function: ease; }
+  .circleCounter1 > div:nth-child(9) {
+    /*percent text*/
+    z-index: 102;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 140%; }
+  .circleCounter1 > div:nth-child(1) {
+    /*percentBar*/
+    z-index: 0;
+    border: 10px solid #f16529; }
+  .circleCounter1 > div:nth-child(2) {
+    /*part Circle1*/
+    z-index: 100;
+    border-top: 10px solid #2c313d; }
+  .circleCounter1 > div:nth-child(3) {
+    /*part Circle2*/
+    z-index: 3;
+    border-right: 10px solid #2c313d; }
+  .circleCounter1 > div:nth-child(4) {
+    /*part Circle3*/
+    z-index: 3;
+    border-bottom: 10px solid #2c313d; }
+  .circleCounter1 > div:nth-child(5) {
+    /*part Circle4*/
+    z-index: 1;
+    border-left: 10px solid #2c313d; }
+  .circleCounter1 > div:nth-child(6) {
+    /*part Circle5, is under the first circle part , importent for over 75%, z-index will increase*/
+    z-index: 2;
+    border-top: 10px solid #f16529; }
+  .circleCounter1 > div:nth-child(7) {
+    /*inner circle, just for shadow and "pixel look"-improvement*/
+    z-index: 101;
+    width: 103px;
+    height: 103px;
+    border: 0 solid #2c313d;
+    background-color: #2c313d;
+    box-shadow: 0 0 5px 0 #000; }
+  .circleCounter1 > div:nth-child(8) {
+    /*outer circle, just for shadow and "pixel look"-improvement*/
+    z-index: 102;
+    width: 118px;
+    height: 118px;
+    border: 3px solid #2c313d; }
+
+/****Animation:***/
+@keyframes animateCircle-2-circleCounter1 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(333deg); } }
+@keyframes animateCircle-3-circleCounter1 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(243deg); } }
+@keyframes animateCircle-4-circleCounter1 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(153deg); } }
+@keyframes animateCircle-5-circleCounter1 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(63deg); } }
+@keyframes animateCircle-6-circleCounter1 {
+  0% {
+    z-index: 1;
+    transform: rotate(45deg); }
+  31.25% {
+    z-index: 101;
+    transform: rotate(45deg); }
+  100% {
+    z-index: 101;
+    transform: rotate(45deg); } }
+.circleCounter2 {
+  /*WrapperClass*/
+  display: flex;
+  position: relative;
+  width: 205px;
+  height: 205px;
+  justify-content: center;
+  align-items: center; }
+  .circleCounter2 > div:nth-child(1) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-1-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(2) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-2-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(3) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-3-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(4) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-4-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(5) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-5-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(6) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-6-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(7) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-7-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(8) {
+    width: 186px;
+    height: 186px;
+    border-top: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-8-circleCounter2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; }
+  .circleCounter2 > div:nth-child(9) {
+    /*percent text*/
+    z-index: 102;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 200%; }
+  .circleCounter2 > div:nth-child(1) {
+    /*percentBar*/
+    z-index: 0;
+    border: 7px solid #00a8dc; }
+  .circleCounter2 > div:nth-child(2) {
+    /*part Circle1*/
+    z-index: 100;
+    border-top: 7px solid #515151; }
+  .circleCounter2 > div:nth-child(3) {
+    /*part Circle2*/
+    z-index: 3;
+    border-right: 7px solid #515151; }
+  .circleCounter2 > div:nth-child(4) {
+    /*part Circle3*/
+    z-index: 3;
+    border-bottom: 7px solid #515151; }
+  .circleCounter2 > div:nth-child(5) {
+    /*part Circle4*/
+    z-index: 1;
+    border-left: 7px solid #515151; }
+  .circleCounter2 > div:nth-child(6) {
+    /*part Circle5, is under the first circle part , importent for over 75%, z-index will increase*/
+    z-index: 2;
+    border-top: 7px solid #00a8dc; }
+  .circleCounter2 > div:nth-child(7) {
+    /*inner circle, just for shadow and "pixel look"-improvement*/
+    z-index: 101;
+    width: 189px;
+    height: 189px;
+    border: 0 solid #2c313d;
+    background-color: #2c313d; }
+  .circleCounter2 > div:nth-child(8) {
+    /*outer circle, just for shadow and "pixel look"-improvement*/
+    z-index: 102;
+    width: 198px;
+    height: 198px;
+    border: 3px solid #2c313d; }
+
+/****Animation:***/
+@keyframes animateCircle-2-circleCounter2 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(196.2deg); } }
+@keyframes animateCircle-3-circleCounter2 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(106.2deg); } }
+@keyframes animateCircle-6-circleCounter2 {
+  0% {
+    z-index: 1;
+    transform: rotate(45deg); }
+  59.5238095238% {
+    z-index: 101;
+    transform: rotate(45deg); }
+  100% {
+    z-index: 101;
+    transform: rotate(45deg); } }
+.circleCounter3 {
+  /*WrapperClass*/
+  display: flex;
+  position: relative;
+  width: 155px;
+  height: 155px;
+  justify-content: center;
+  align-items: center; }
+  .circleCounter3 > div:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-1-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-2-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(3) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-3-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-4-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(5) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-5-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(6) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-6-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(7) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-7-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(8) {
+    width: 120px;
+    height: 120px;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    animation-name: animateCircle-8-circleCounter3;
+    animation-duration: 0s;
+    animation-timing-function: linear; }
+  .circleCounter3 > div:nth-child(9) {
+    /*percent text*/
+    z-index: 102;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 200%; }
+  .circleCounter3 > div:nth-child(1) {
+    /*percentBar*/
+    z-index: 0;
+    border: 15px solid #724e94; }
+  .circleCounter3 > div:nth-child(2) {
+    /*part Circle1*/
+    z-index: 100;
+    border-top: 15px solid #4b345e; }
+  .circleCounter3 > div:nth-child(3) {
+    /*part Circle2*/
+    z-index: 3;
+    border-right: 15px solid #4b345e; }
+  .circleCounter3 > div:nth-child(4) {
+    /*part Circle3*/
+    z-index: 3;
+    border-bottom: 15px solid #4b345e; }
+  .circleCounter3 > div:nth-child(5) {
+    /*part Circle4*/
+    z-index: 1;
+    border-left: 15px solid #4b345e; }
+  .circleCounter3 > div:nth-child(6) {
+    /*part Circle5, is under the first circle part , importent for over 75%, z-index will increase*/
+    z-index: 2;
+    border-top: 15px solid #724e94; }
+  .circleCounter3 > div:nth-child(7) {
+    /*inner circle, just for shadow and "pixel look"-improvement*/
+    z-index: 101;
+    width: 123px;
+    height: 123px;
+    border: 0 solid #2c313d;
+    background-color: #2c313d;
+    box-shadow: 0 0 5px 0 #000; }
+  .circleCounter3 > div:nth-child(8) {
+    /*outer circle, just for shadow and "pixel look"-improvement*/
+    z-index: 102;
+    width: 148px;
+    height: 148px;
+    border: 3px solid #2c313d;
+    box-shadow: inset 0 0 5px 0 #000; }
+
+/****Animation:***/
+@keyframes animateCircle-2-circleCounter3 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(297deg); } }
+@keyframes animateCircle-3-circleCounter3 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(207deg); } }
+@keyframes animateCircle-4-circleCounter3 {
+  0% {
+    transform: rotate(45deg); }
+  100% {
+    transform: rotate(117deg); } }
+@keyframes animateCircle-6-circleCounter3 {
+  0% {
+    z-index: 1;
+    transform: rotate(45deg); }
+  0% {
+    z-index: 101;
+    transform: rotate(45deg); }
+  100% {
+    z-index: 101;
+    transform: rotate(45deg); } }
+.circleCounter1 > div:nth-child(1), .circleCounter1 > div:nth-child(2), .circleCounter1 > div:nth-child(3), .circleCounter1 > div:nth-child(4), .circleCounter1 > div:nth-child(5), .circleCounter1 > div:nth-child(6), .circleCounter1 > div:nth-child(7), .circleCounter1 > div:nth-child(8), .circleCounter2 > div:nth-child(1), .circleCounter2 > div:nth-child(2), .circleCounter2 > div:nth-child(3), .circleCounter2 > div:nth-child(4), .circleCounter2 > div:nth-child(5), .circleCounter2 > div:nth-child(6), .circleCounter2 > div:nth-child(7), .circleCounter2 > div:nth-child(8), .circleCounter3 > div:nth-child(1), .circleCounter3 > div:nth-child(2), .circleCounter3 > div:nth-child(3), .circleCounter3 > div:nth-child(4), .circleCounter3 > div:nth-child(5), .circleCounter3 > div:nth-child(6), .circleCounter3 > div:nth-child(7), .circleCounter3 > div:nth-child(8) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  animation-fill-mode: forwards;
+  transform: rotate(45deg); }
+
+/*# sourceMappingURL=style.css.map */

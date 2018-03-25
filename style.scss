@@ -1,0 +1,31 @@
+$backgroundColor: lighten(#21252e, 5);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $backgroundColor;
+}
+
+//define your circles here:
+//$name: (class name (like in HTML), percent, size, border width, , animation-time, foreground color, background color, text size, color of text, inner shadow, outer shadow, animation-timing-function)
+$circle1: (circleCounter1, 80, 120px, 10px, 2, #f16529, $backgroundColor, 140%, #fff, 'yes', 'no', ease);
+$circle2: (circleCounter2, 42, 200px, 7px, 3, #00a8dc, #515151, 200%, #fff, 'no', 'no', ease-in-out);
+$circle3: (circleCounter3, 70, 150px, 15px, 0, #724e94, #4b345e, 200%, #fff, 'yes', 'yes', linear);
+
+$circleList: ($circle1, $circle2, $circle3); //add here your circles, if it contains only one element, then finish it with a comma
+
+@import 'circleCounter';
