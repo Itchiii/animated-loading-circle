@@ -1,23 +1,21 @@
 /*
 JavaScript is optional for the percent text
 */
+const CIRCLE_ARRAY = document.querySelectorAll('[class^="circleCounter"]');
 
-const circleArray = document.querySelectorAll('[class^="circleCounter"]');
-
-for (let i = 0; i < circleArray.length; i++) {
-  let percentText = circleArray[i].dataset.percentid;
-  let percent = circleArray[i].dataset.percent;
-  let animationtime = circleArray[i].dataset.animationtime;
-  animatePercent(percent, percentText, animationtime);
+for (let circle of CIRCLE_ARRAY) {
+  let percentText = circle.dataset.percentid,
+      percent = parseInt(circle.dataset.percent),
+      animationTime = parseInt(circle.dataset.animationtime);
+  animatePercent(percent, percentText, animationTime);
 }
 
-function animatePercent(percent, percentText, animationtime){
+function animatePercent(percent, percentText, animationTime){
   let counter = 0;
-  if (animationtime == 0) document.getElementById(percentText).textContent = percent + "%";
-  else {
-    let id = setInterval(function(){ draw(percent, percentText, animationtime); }, animationtime*1000 / percent);
-  }
-  function draw(percent, percentText, animationtime){
+  if (animationTime === 0) document.getElementById(percentText).textContent = percent + "%";
+  else var id = setInterval(draw, animationTime * 1000 / percent, percent, percentText);
+
+  function draw(percent, percentText){
     if (counter > percent) clearInterval(id);
     else {
       document.getElementById(percentText).textContent = counter + "%";
